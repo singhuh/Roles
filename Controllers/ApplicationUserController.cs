@@ -29,6 +29,7 @@ namespace test5.Controllers
             var userList = _db.ApplicationUser.ToList();
             var userRole = _db.UserRoles.ToList();
             var roles = _db.Roles.ToList();
+            
             foreach(var user in userList)
             {
                 var role = userRole.FirstOrDefault(u => u.UserId == user.Id);
