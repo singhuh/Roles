@@ -35,9 +35,10 @@ namespace test5
             //  .AddRoles<IdentityRole>()
             //.AddRoleManager<IdentityRole>()
             //.AddEntityFrameworkStores<ApplicationDbContext>();
-            //        services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false);
             //.AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

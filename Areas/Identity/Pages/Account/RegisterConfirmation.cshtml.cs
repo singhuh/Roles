@@ -16,6 +16,7 @@ namespace test5.Areas.Identity.Pages.Account
         private readonly IEmailSender _sender;
 
         public RegisterConfirmationModel(UserManager<IdentityUser> userManager, IEmailSender sender)
+
         {
             _userManager = userManager;
             _sender = sender;
